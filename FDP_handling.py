@@ -36,8 +36,8 @@ def parseRDFIntoGraph(url):
 
 def navigateFDP(url):
     """From the URL of FDP"""
-    if datasets not in st.session_state:
-        datasets = []
+    if 'datasets' not in st.session_state:
+        st.session_state.datasets = []
     
     g = parse_rdf_into_graph(url)
     catalogs = g.query(QUERY_CONTAINS)
@@ -52,7 +52,7 @@ def navigateFDP(url):
                 access_links = g_db.query(QUERY_ACCESSLINK)
 
                 for row_acl in access_links:
-                    datasetss.append(row_acl.acl)
+                    st.session_state.datasets.append(row_acl.acl)
     
     
 

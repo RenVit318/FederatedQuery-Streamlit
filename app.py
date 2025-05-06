@@ -68,5 +68,5 @@ def main():
 
 
 
-if __fdp_url__ == '__main__':
+if __name__ == '__main__':
   main()

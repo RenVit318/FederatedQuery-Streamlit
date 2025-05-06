@@ -1,4 +1,4 @@
 import rdflib
 
-def executeQuery():
-  print("Executing Query")
+def executeQuery(query):
+  print("Executing Query\n" + query)

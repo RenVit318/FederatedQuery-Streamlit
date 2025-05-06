@@ -1,3 +1,4 @@
+import streamlit as st
 import requests
 import rdflib
 from rdflib.plugins.sparql import prepareQuery
@@ -39,16 +40,16 @@ def navigateFDP(url):
     if 'datasets' not in st.session_state:
         st.session_state.datasets = []
     
-    g = parse_rdf_into_graph(url)
+    g = parseRDFIntoGraph(url)
     catalogs = g.query(QUERY_CONTAINS)
     for row_c in catalogs:
-        g_cat = parse_rdf_into_graph(row_c.cat)
+        g_cat = parseRDFIntoGraph(row_c.cat)
         datasets = g_cat.query(QUERY_CONTAINS)
         for row_ds in datasets:
-            g_ds = parse_rdf_into_graph(row_ds.cat)
+            g_ds = parseRDFIntoGraph(row_ds.cat)
             distributions = g_ds.query(QUERY_CONTAINS)
             for row_db in distributions:
-                g_db = parse_rdf_into_graph(row_db.cat)
+                g_db = parseRDFIntoGraph(row_db.cat)
                 access_links = g_db.query(QUERY_ACCESSLINK)
 
                 for row_acl in access_links:

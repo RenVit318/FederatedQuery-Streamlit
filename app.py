@@ -49,7 +49,7 @@ def setupContent():
           if st.button("Delete", key=f"delete_{i}"):
               st.session_state.fdp_urls.pop(i)
               st.success(f"Deleted {fdp_url}")
-              st.experimental_rerun()  # Refresh view to prevent key errors
+              st.rerun()  # Refresh view to prevent key errors
 
   
 

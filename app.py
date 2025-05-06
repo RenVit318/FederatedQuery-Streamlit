@@ -56,9 +56,22 @@ def setupContent():
 
   st.subheader("Query")
   query = st.text_area(label="Type your SPARQL query here", value=STANDARD_QUERY)
+  query_on_fdp = st.checkbox('Execute query on FDP instead of Triplestore')
   if st.button("Execute Query"):
-    executeQuery()
-  
+    if query_on_fdp:
+      for FDP in st.session_state.fdp_urls:
+        st.write(f'executing query for {FDP}')
+        #TODO: Implement this code
+    else:
+      for FDP in st.session_state.fdp_urls:
+        navigateFDP(FDP)
+      
+      st.write("Found the following datasets connected to the provided FAIR Data Points:")
+      for dataset in st.session_state.datasets:
+        st.write(f'- {dataset}')
+      if st.button('Execute query on these datasets?')
+        executeQuery(query)
+    
 
 
 

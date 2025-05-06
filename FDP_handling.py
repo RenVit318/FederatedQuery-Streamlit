@@ -53,5 +53,6 @@ def navigateFDP(url):
 
 
 def getFDPs():
-  with open('fdp_uris.txt', 'r') as f:
-    fdp_uris = f.readlines() 
+    with open('fdp_uris.txt', 'r') as f:
+        fdp_uris = f.readlines() 
+    return fdp_uris

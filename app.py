@@ -69,7 +69,7 @@ def setupContent():
       st.write("Found the following datasets connected to the provided FAIR Data Points:")
       for dataset in st.session_state.datasets:
         st.write(f'- {dataset}')
-      if st.button('Execute query on these datasets?')
+      if st.button('Execute query on these datasets?'):
         executeQuery(query)
     
 

@@ -1,5 +1,5 @@
 import streamlit as st
-from FDP_handling import getFDPs
+from FDP_handling import getFDPs, navigateFDP
 from Query_handling import executeQuery
 
 

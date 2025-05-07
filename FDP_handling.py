@@ -32,9 +32,9 @@ def parseRDFIntoGraph(url):
         g.parse(data=response.text, format='turtle') # This is an assumption. Fix this?
 
     except requests.exceptions.HTTPError as e:
-        print(f"HTTP error while fetching URL {url}: {e}")
+        st.warning(f"HTTP error while fetching URL {url}: {e}")
     except Exception as e:
-        print(f"Unexpected error while handling URL {url}: {type(e).__name__} - {e}")
+        st.error(f"Unexpected error while handling URL {url}: {type(e).__name__} - {e}")
         sys.exit(1)
 
     return g

@@ -55,12 +55,13 @@ def setupContent():
 
 
   st.subheader("Query")
-  query = st.text_area(label="Type your SPARQL query here", value=STANDARD_QUERY)
+  query = st.text_area(label="Type your SPARQL query here", value=STANDARD_QUERY, height=250)
   query_on_fdp = st.checkbox('Execute query on FDP instead of Triplestore')
   if st.button("Execute Query"):
     if query_on_fdp:
       for FDP in st.session_state.fdp_urls:
         st.write(f'executing query for {FDP}')
+        st.error('This code is not implemented yet')
         #TODO: Implement this code
     else:
       for FDP in st.session_state.fdp_urls:

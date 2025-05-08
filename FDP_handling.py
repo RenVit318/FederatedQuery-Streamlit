@@ -19,7 +19,7 @@ QUERY_ACCESSLINK = prepareQuery(
 
 def parseRDFIntoGraph(url):
     # HARDCODED NOW TO WORK WITH THE VODAN FDP
-    vodan_ip = '146.190.0.168'
+    vodan_ip = '146.190.0.168:8081'
     if 'localhost' in url:
         url.replace('localhost', vodan_ip)
     ####

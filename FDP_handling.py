@@ -44,6 +44,7 @@ def navigateFDP(url):
     """From the URL of FDP"""
     if 'datasets' not in st.session_state:
         st.session_state.datasets = []
+    st.session_state.datasets = []
     
     g = parseRDFIntoGraph(url)
     catalogs = g.query(QUERY_CONTAINS)

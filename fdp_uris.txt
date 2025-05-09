@@ -1,2 +1,1 @@
-http://fairdp.colo.ba.be
-http://146.190.0.168
+https://fairdp.colo.ba.be

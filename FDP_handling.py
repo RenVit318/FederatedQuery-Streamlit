@@ -67,4 +67,13 @@ def navigateFDP(url):
 def getFDPs():
     with open('fdp_uris.txt', 'r') as f:
         fdp_uris = f.readlines() 
+
+    # Clean URLs
+    for i in range(len(fdp_uris)):
+        if fdp_uris[i].endswith('\n'): # Need to do this for linebreaks - fault in the read method?
+            fdp_uris[i] = fdp_uris[i][:-1]
+
+    st.write(fdp_uris)
+
+
     return fdp_uris
